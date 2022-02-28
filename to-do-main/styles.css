@@ -63,8 +63,8 @@ form {
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
-  text-decoration: none;
   display: block;
+  text-decoration: none;
 }
 
 .dropdown-content a:hover {
@@ -75,22 +75,18 @@ form {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
-  background-color: var(--secondary);
-}
-
 .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
 
 #item-uno a:hover {
   background-color: lightgreen;
@@ -117,30 +113,13 @@ form {
   background-color: var(--secondary);
 }
 
-.addTaskButton,
-.orderButton,
-.vaciarButton {
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.addTaskButton {
-  height: 35px;
-  border-radius: 50%;
-  font-size: 18px;
-  background-color: var(--diabled);
-}
-
-.addTaskButton:hover {
-  background-color: #d33f49;
-  color: var(--diabled);
-}
-
 .vaciarButton,
 .orderButton {
   background-color: var(--secondary);
   color: var(--light);
+  border: none;
+  cursor: pointer;
+  padding: 12px 16px;
 }
 
 .vaciarButton:hover,
@@ -162,16 +141,3 @@ form {
   margin: 10%;
 }
 
-.task {
-  background-color: var(--primary);
-  padding: 15px;
-  margin-top: 15px;
-  color: var(--light);
-  cursor: pointer;
-}
-
-.done {
-  background-color: var(--diabled);
-  text-decoration: line-through;
-  color: var(--dark);
-}
