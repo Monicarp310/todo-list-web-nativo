@@ -13,14 +13,14 @@
 
 <body>
     <!--Lista tarea-->
+    
     <div id="listTask">
         <div class="list roundBorder, flex-box">
             <h1>LISTA DE TAREAS</h1>
-            <input class="nombreTarea" type="text" value="Nombre" name="nombre" onclick="javascript: limpia(this);"
-                onBlur="javascript: verifica(this);">
+            <form onsubmit="listTask(event)"></form>
+            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
             <br><br>
-            <input class="descripcionTarea" type="text" value="Descripción" name="descripcion"
-                onclick="javascript: limpia(this);" onBlur="javascript: verifica(this);">
+            <input type="text" name="taskText" autocomplete="off" placeholder="Descripción" class="roundBorder">
             <br><br>
             <!--Estado tarea-->
             <div class="dropdown">
@@ -47,9 +47,10 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="addTask">+</button>
-            <form onsubmit="listTask(event)">
+            <button type="submit" class="addTaskButton">+</button>
+            
             </form>
+            <div id="tasksContainer"></div>
         </div>
     </div>
 
@@ -61,8 +62,13 @@
                 <form onsubmit="createTask(event)">
                     <button type="button" class="orderButton roundBorder"
                         onclick="renderOrderedTasks()">Ordenar</button>
-                    <button type="submit" class="addTaskButton">+</button>
                     <button type="button" class="vaciarButton roundBorder" onclick="vaciarLista()">Vaciar</button>
+                    <br>
+                    <div id="contenedor-tareas">
+                            <h2>Tarea 1</h2>
+                            <h5>Estado</h5>
+                            <h5>Prioridad</h5>
+                    </div>
                 </form>
                 <div id="tasksContainer"></div>
             </div>
@@ -75,7 +81,6 @@
                 <form onsubmit="doingTask(event)">
                     <button type="button" class="orderButton roundBorder"
                         onclick="renderOrderedTasks()">Ordenar</button>
-                    <button type="submit" class="addTaskButton">+</button>
                     <button type="button" class="vaciarButton roundBorder" onclick="vaciarLista()">Vaciar</button>
                 </form>
                 <div id="tasksContainer"></div>
@@ -89,7 +94,6 @@
                 <form onsubmit="doneTask(event)">
                     <button type="button" class="orderButton roundBorder"
                         onclick="renderOrderedTasks()">Ordenar</button>
-                    <button type="submit" class="addTaskButton">+</button>
                     <button type="button" class="vaciarButton roundBorder" onclick="vaciarLista()">Vaciar</button>
                 </form>
                 <div id="tasksContainer"></div>
@@ -103,16 +107,11 @@
                 <form onsubmit="deletedTask(event)">
                     <button type="button" class="orderButton roundBorder"
                         onclick="renderOrderedTasks()">Ordenar</button>
-                    <button type="submit" class="addTaskButton">+</button>
                     <button type="button" class="vaciarButton roundBorder" onclick="vaciarLista()">Vaciar</button>
                 </form>
                 <div id="tasksContainer"></div>
             </div>
         </div>
-    </div>
-
-    <div class="ventana-tarea-nueva">
-        
     </div>
 </body>
 
