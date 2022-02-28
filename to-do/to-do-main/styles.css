@@ -1,0 +1,138 @@
+:root {
+  --primary: #a5c882;
+  --secondary: #d33f49;
+  --light: #fff;
+  --dark: #000;
+  --diabled: #e7e7e7;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  background-color: var(--diabled);
+}
+
+.roundBorder {
+  border-radius: 5px;
+}
+
+.listTask {
+    margin: 25px auto;
+  padding: 25px;
+  background-color: var(--light);
+  width: 100%;
+}
+
+.list {
+  margin: 25px auto;
+  padding: 25px;
+  background-color: var(--light);
+  width: 100%;
+}
+
+
+
+input {
+  border: none;
+  padding-left: 10px;
+  background-color: var(--diabled);
+}
+
+input:focus {
+  outline: none;
+}
+
+.addTaskButton,
+.orderTaskButton,
+.deleteTaskButton {
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.addTaskButton {
+  height: 35px;
+  border-radius: 50%;
+  font-size: 18px;
+  background-color: var(--diabled);
+}
+
+.orderTaskButton,
+.deleteTaskButton {
+  background-color: var(--secondary);
+  color: var(--light);
+}
+
+.task {
+  background-color: var(--primary);
+  padding: 15px;
+  margin-top: 15px;
+  color: var(--light);
+  cursor: pointer;
+}
+
+.dropbtn {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  background-color: var(--diabled);
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+#item-uno a:hover {
+  background-color: lightgreen;
+}
+
+#item-dos a:hover {
+  background-color: lightsalmon;
+}
+
+#item-tres a:hover {
+  background-color: lightcoral;
+}
+
+.flex-container {
+    display: flex;
+    width: 400px;
+    height: 250px;
+    align-items: flex-end;
+}
+
+.flex-item {
+    width: 100%;
+    height: 100%;
+    margin: 10%;
+  }
+
+

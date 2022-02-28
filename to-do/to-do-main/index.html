@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de tareas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="flex-box">
+      <div class="listTask roundBorder">
+        <h1>LISTA DE TAREAS</h1>
+        <br />
+        <form>
+          <input
+            type="text"
+            name="taskText"
+            placeholder="Nueva tarea"
+            class="roundBorder"
+          />
+          <br /><br />
+          <input
+            type="text"
+            name="taskText"
+            placeholder="Descripcion"
+            class="roundBorder"
+          />
+          <br /><br />
+          <div class="dropdown">
+            <button class="dropbtn">Estado</button>
+            <div class="dropdown-content">
+              <a href="#">CREATE</a>
+              <a href="#">DOING</a>
+              <a href="#">DONE</a>
+              <a href="#">DELETED</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn">Prioridad</button>
+            <div class="dropdown-content">
+              <div id="item-uno">
+                <a href="#">1</a>
+              </div>
+              <div id="item-dos">
+                <a href="#">2</a>
+              </div>
+              <div id="item-tres">
+                <a href="#">3</a>
+              </div>
+            </div>
+          </div>
+          <br /><br />
+          <button id="addTask" class="addTaskButton">+</button>
+          <!--  <button id="orderTask" class="orderTaskButton">Ordenar</button> -->
+        </form>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-item">
+        <div class="list roundBorder">
+          <h1>DOING</h1>
+          <form>
+            <button id="orderTask" class="orderTaskButton">Ordenar</button>
+            <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="flex-item">
+        <div class="list roundBorder">
+          <h1>DONE</h1>
+          <form>
+            <button id="orderTask" class="orderTaskButton">Ordenar</button>
+            <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="flex-item">
+        <div class="list roundBorder">
+          <h1>DELETE</h1>
+          <form>
+            <button id="orderTask" class="orderTaskButton">Ordenar</button>
+            <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="tasksContainer">
+      <div style="display: none">
+        <li id="crearTarea">
+          <span id="NombreTarea"></span>
+          <span id="DescripcionTarea"></span>
+        </li>
+      </div>
+    </div>
+
+    <script src="script-fer.js" type="text/javascript" defer></script>
+  </body>
+</html>
