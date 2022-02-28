@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,37 +10,57 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" type="text/javascript" defer></script>
 </head>
+
 <body>
-    <div id="listTask"></div>
+    <!--Lista tarea-->
+    <div id="listTask">
         <div class="list roundBorder, flex-box">
             <h1>LISTA DE TAREAS</h1>
-            <input type="text" value="Value por Default" name="nombre" onclick="javascript: limpia(this);" onBlur="javascript: verifica(this);">
-           <!-- <input class="Nombre" type="text" value="Nombre">-->
+            <input class="nombreTarea" type="text" value="Nombre" name="nombre" onclick="javascript: limpia(this);"
+                onBlur="javascript: verifica(this);">
             <br><br>
-            <input class="Descripcion" type="text" value="Descripción">
+            <input class="descripcionTarea" type="text" value="Descripción" name="descripcion"
+                onclick="javascript: limpia(this);" onBlur="javascript: verifica(this);">
             <br><br>
+            <!--Estado tarea-->
             <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
+                <button class="dropbtn">Estado</button>
                 <div class="dropdown-content">
-                  <a href="#">CREATE</a>
-                  <a href="#">DOING</a>
-                  <a href="#">DONE</a>
-                  <a href="#">DELETED</a>
+                    <a href="#">CREATE</a>
+                    <a href="#">DOING</a>
+                    <a href="#">DONE</a>
+                    <a href="#">DELETED</a>
                 </div>
-              </div>
-              <!--prioridad-->
-            <br><br>
-            <button type="button" class="addTaskButton">+</button>
-            <form onsubmit="listTask(event)" >
+            </div>
+            <!--Prioridad-->
+            <div class="dropdown">
+                <button class="dropbtn">Prioridad</button>
+                <div class="dropdown-content">
+                    <div id="item-uno">
+                        <a href="#">1</a>
+                    </div>
+                    <div id="item-dos">
+                        <a href="#">2</a>
+                    </div>
+                    <div id="item-tres">
+                        <a href="#">3</a>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="addTask">+</button>
+            <form onsubmit="listTask(event)">
             </form>
         </div>
     </div>
+
+    <!--CREATE-->
     <div class="flex-container">
         <div class="flex-item">
             <div class="list roundBorder">
                 <h1>CREATE</h1>
-                <form onsubmit="createTask(event)" >
-                    <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+                <form onsubmit="createTask(event)">
+                    <button type="button" class="orderButton roundBorder"
+                        onclick="renderOrderedTasks()">Ordenar</button>
                     <button type="submit" class="addTaskButton">+</button>
                     <button type="button" class="vaciarButton roundBorder" onclick="vaciarLista()">Vaciar</button>
                 </form>
@@ -47,11 +68,13 @@
             </div>
         </div>
 
+        <!--DOING-->
         <div class="flex-item">
             <div class="list roundBorder">
                 <h1>DOING</h1>
-                <form onsubmit="doingTask(event)" >
-                    <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+                <form onsubmit="doingTask(event)">
+                    <button type="button" class="orderButton roundBorder"
+                        onclick="renderOrderedTasks()">Ordenar</button>
                     <button type="submit" class="addTaskButton">+</button>
                     <button type="button" class="vaciarButton roundBorder" onclick="vaciarLista()">Vaciar</button>
                 </form>
@@ -59,11 +82,13 @@
             </div>
         </div>
 
+        <!--DONE-->
         <div class="flex-item">
             <div class="list roundBorder">
                 <h1>DONE</h1>
                 <form onsubmit="doneTask(event)">
-                    <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+                    <button type="button" class="orderButton roundBorder"
+                        onclick="renderOrderedTasks()">Ordenar</button>
                     <button type="submit" class="addTaskButton">+</button>
                     <button type="button" class="vaciarButton roundBorder" onclick="vaciarLista()">Vaciar</button>
                 </form>
@@ -71,11 +96,13 @@
             </div>
         </div>
 
+        <!--DELETED-->
         <div class="flex-item">
             <div class="list roundBorder">
                 <h1>DELETED</h1>
-                <form onsubmit="deletedTask(event)" >
-                    <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+                <form onsubmit="deletedTask(event)">
+                    <button type="button" class="orderButton roundBorder"
+                        onclick="renderOrderedTasks()">Ordenar</button>
                     <button type="submit" class="addTaskButton">+</button>
                     <button type="button" class="vaciarButton roundBorder" onclick="vaciarLista()">Vaciar</button>
                 </form>
@@ -83,5 +110,10 @@
             </div>
         </div>
     </div>
+
+    <div class="ventana-tarea-nueva">
+        
+    </div>
 </body>
+
 </html>

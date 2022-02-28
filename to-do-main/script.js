@@ -1,6 +1,13 @@
 // Tasks Container
 const tasksContainer = document.getElementById("tasksContainer");
 
+const task=[
+    new task("todo task 1", "Example task", "todo", 0),
+    new task("todo task 2", "Example task", "doing", 0),
+    new task("todo task 3", "Example task", "done", 0),
+    new task("todo task 4", "Example task", "deleted", 1)
+]
+
 const addNewTask = (event) => {
   event.preventDefault();
   const { value } = event.target.taskText;
@@ -35,3 +42,5 @@ const vaciarLista = () => {};
 function limpia(elemento) {
   elemento.value = "";
 }
+
+document.getElementById("")
