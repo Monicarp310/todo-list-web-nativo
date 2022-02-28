@@ -18,6 +18,7 @@
         <br />
         <form>
           <input
+            id="nameTaskForm"
             type="text"
             name="taskText"
             placeholder="Nueva tarea"
@@ -25,13 +26,30 @@
           />
           <br /><br />
           <input
+            id="descTaskForm"
             type="text"
             name="taskText"
             placeholder="Descripcion"
             class="roundBorder"
           />
           <br /><br />
-          <div class="dropdown">
+          <input
+            id="priorityForm"
+            type="text"
+            name="taskText"
+            placeholder="Prioridad"
+            class="roundBorder"
+          />
+          <br /><br />
+          <input
+            id="StatusForm"
+            type="text"
+            name="taskText"
+            placeholder="Estado"
+            class="roundBorder"
+          />
+          <br /><br />
+          <!-- <div class="dropdown" id="statusForm">
             <button class="dropbtn">Estado</button>
             <div class="dropdown-content">
               <a href="#">CREATE</a>
@@ -41,7 +59,7 @@
             </div>
           </div>
 
-          <div class="dropdown">
+          <div class="dropdown" id="PriorityForm">
             <button class="dropbtn">Prioridad</button>
             <div class="dropdown-content">
               <div id="item-uno">
@@ -55,9 +73,8 @@
               </div>
             </div>
           </div>
-          <br /><br />
+          <br /><br />-->
           <button id="addTask" class="addTaskButton">+</button>
-          <!--  <button id="orderTask" class="orderTaskButton">Ordenar</button> -->
         </form>
       </div>
     </div>
@@ -65,12 +82,24 @@
     <div class="flex-container">
       <div class="flex-item">
         <div class="list roundBorder">
+          <h1>TO DO</h1>
+          <form>
+            <button id="orderTask" class="orderTaskButton">Ordenar</button>
+            <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
+          </form>
+        </div>
+        <div id="todoTask"></div>
+      </div>
+
+      <div class="flex-item" id="Doing">
+        <div class="list roundBorder">
           <h1>DOING</h1>
           <form>
             <button id="orderTask" class="orderTaskButton">Ordenar</button>
             <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
           </form>
         </div>
+        <div id="doingTasks"></div>
       </div>
 
       <div class="flex-item">
@@ -81,6 +110,7 @@
             <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
           </form>
         </div>
+        <div id="doneTask"></div>
       </div>
 
       <div class="flex-item">
@@ -92,17 +122,18 @@
           </form>
         </div>
       </div>
+      <div id="deleteTask"></div>
     </div>
 
-    <div id="tasksContainer">
-      <div style="display: none">
-        <li id="crearTarea">
-          <span id="NombreTarea"></span>
-          <span id="DescripcionTarea"></span>
-        </li>
+    <div style="display: none">
+      <div id="TasktoClone">
+        <span class="taskName">Nombre</span>
+        <p class="taskDesc">Descripcion</p>
+        <span class="taskStatus">Estado</span>
       </div>
     </div>
 
-    <script src="script-fer.js" type="text/javascript" defer></script>
+    <script src="task.js" type="text/javascript"></script>
+    <script src="script-fer.js" type="text/javascript"></script>
   </body>
 </html>
