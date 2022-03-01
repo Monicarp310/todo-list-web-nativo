@@ -43,7 +43,6 @@ addTaskButton.addEventListener("click", (event) => {
 orderTaskButton.addEventListener("click", (event) => {
   event.preventDefault();
 });
-
 const orderTaskButton = document.getElementById("deleteTask");
 deleteTaskButton.addEventListener("click", (event) => {
   event.preventDefault();
