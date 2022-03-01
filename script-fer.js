@@ -17,7 +17,7 @@ tasks.forEach((task) => {
 
   let todoList = document.getElementById("todoTask");
   todoList.appendChild(taskToClone);
-  let doingList = document.getElementById("doingTasks");
+  let doingList = document.getElementById("doingTask");
   doingList.appendChild(taskToClone);
   let doneList = document.getElementById("doneTask");
   doneList.appendChild(taskToClone);
@@ -31,10 +31,11 @@ addTaskButton.addEventListener("click", (event) => {
   console.log(inputNameTaskForm.value);
   const inputDescriptionTaskForm = document.getElementById("descTaskForm");
   console.log(inputDescriptionTaskForm.value);
-  const dropdownStatusForm = document.getElementById("statusForm");
-  console.log(dropdownStatusForm.value);
-  const dropdownPriorityForm = document.getElementById("PriorityForm");
-  console.log(dropdownPriorityForm.value);
+  const inputPriorityForm = document.getElementById("priorityForm");
+  console.log(inputPriorityForm.value);
+  const inputStatusForm = document.getElementById("statusForm");
+  console.log(inputStatusForm.value);
+
   event.preventDefault();
 });
 
