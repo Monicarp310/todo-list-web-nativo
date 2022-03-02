@@ -14,43 +14,21 @@
   <body>
     <div class="flex-box">
       <div class="listTask roundBorder">
-        <h1>LISTA DE TAREAS</h1>
-        <br />
-        <form>
-          <input
-            id="nameTaskForm"
-            type="text"
-            name="taskText"
-            placeholder="Nueva tarea"
-            class="roundBorder"
-          />
-          <br /><br />
-          <input
-            id="descTaskForm"
-            type="text"
-            name="taskText"
-            placeholder="Descripcion"
-            class="roundBorder"
-          />
-          <br /><br />
-          <input
-            id="priorityForm"
-            type="text"
-            name="taskText"
-            placeholder="Prioridad"
-            class="roundBorder"
-          />
-          <br /><br />
-          <input
-            id="statusForm"
-            type="text"
-            name="taskText"
-            placeholder="Estado"
-            class="roundBorder"
-          />
-          <br /><br />
-          <button id="addTask" class="addTaskButton">+</button>
+        <div id="formTask">
+          <h1>LISTA DE TAREAS</h1>
+          <form onsubmit="addTask(event)" >
+            <input id="nameTaskForm" type="text" name="taskText" autocomplete="off" placeholder="Nombre tarea" class="roundBorder">
+            <br>
+            <input id="descTaskForm" type="text" name="taskText" autocomplete="off" placeholder="Descripción tarea" class="roundBorder">
+            <br>
+            <input id="priorityForm" type="text" name="taskText" autocomplete="off" placeholder="Estado tarea" class="roundBorder">
+            <br>
+            <input id="statusForm" type="text" name="taskText" autocomplete="off" placeholder="Prioridad tarea" class="roundBorder">
+            <br><br>
+            <button id="addTask" class="addTaskButton">+</button>
         </form>
+        <div id="tasksContainer"></div>
+        </div>
       </div>
     </div>
 
@@ -59,8 +37,8 @@
         <div class="list roundBorder">
           <h1>TO DO</h1>
           <form>
-            <button id="orderTask" class="orderTaskButton">Ordenar</button>
-            <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
+            <!-- <button id="orderTask" class="orderTaskButton">Ordenar</button>
+            <button class="deleteTaskButton">Vaciar</button> -->
           </form>
         </div>
         <div id="todoTask"></div>
@@ -70,8 +48,10 @@
         <div class="list roundBorder">
           <h1>DOING</h1>
           <form>
-            <button id="orderTask" class="orderTaskButton">Ordenar</button>
-            <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
+       <!--      <button id="orderTask" class="orderTaskButton">Ordenar</button>
+            <button  class="deleteTaskButton">Vaciar</button> -->
+        </form>
+        
           </form>
         </div>
         <div id="doingTask"></div>
@@ -81,8 +61,8 @@
         <div class="list roundBorder">
           <h1>DONE</h1>
           <form>
-            <button id="orderTask" class="orderTaskButton">Ordenar</button>
-            <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
+    <!--         <button id="orderTask" class="orderTaskButton">Ordenar</button>
+            <button class="deleteTaskButton">Vaciar</button> -->
           </form>
         </div>
         <div id="doneTask"></div>
@@ -92,11 +72,11 @@
         <div class="list roundBorder">
           <h1>DELETE</h1>
           <form>
-            <button id="orderTask" class="orderTaskButton">Ordenar</button>
-            <button id="deleteTask" class="deleteTaskButton">Vaciar</button>
+        <!--     <button id="orderTask" class="orderTaskButton">Ordenar</button>
+            <button class="deleteTaskButton">Vaciar</button> -->
           </form>
         </div>
-      </div>
+  
       <div id="deleteTask"></div>
     </div>
 
@@ -105,6 +85,7 @@
         <span class="taskName">Nombre</span>
         <p class="taskDesc">Descripcion</p>
         <span class="taskStatus">Estado</span>
+        <span class="taskPriority">Prioridad</span>
       </div>
     </div>
 

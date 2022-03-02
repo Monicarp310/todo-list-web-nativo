@@ -14,15 +14,23 @@ tasks.forEach((task) => {
   description[0].innerHTML = task.description;
   let status = taskToClone.getElementsByClassName("taskStatus");
   status[0].innerHTML = task.status;
+  let priority = taskToClone.getElementsByClassName("taskPriority");
+  priority[0].innerHTML = task.priority;
 
-  let todoList = document.getElementById("todoTask");
-  todoList.appendChild(taskToClone);
+
+  if (status.value="To do"){
+    let todoList = document.getElementById("todoTask");
+    todoList.appendChild(taskToClone.cloneNode(true));
+  }
+
   let doingList = document.getElementById("doingTask");
-  doingList.appendChild(taskToClone);
+  doingList.appendChild(taskToClone.cloneNode(true));
+
   let doneList = document.getElementById("doneTask");
-  doneList.appendChild(taskToClone);
+  doneList.appendChild(taskToClone.cloneNode(true));
+
   let deleteTask = document.getElementById("deleteTask");
-  deleteTask.appendChild(taskToClone);
+  deleteTask.appendChild(taskToClone.cloneNode(true));
 });
 
 const addTaskButton = document.getElementById("addTask");
@@ -39,11 +47,12 @@ addTaskButton.addEventListener("click", (event) => {
   event.preventDefault();
 });
 
+/* const deleteTaskButton = document.getElementById("deleteTask");
+deleteTaskButton.addEventListener("click", (event) => {
+  event.preventDefault();
+}) */
+
 /* const orderTaskButton = document.getElementById("orderTask");
 orderTaskButton.addEventListener("click", (event) => {
-  event.preventDefault();
-});
-const orderTaskButton = document.getElementById("deleteTask");
-deleteTaskButton.addEventListener("click", (event) => {
   event.preventDefault();
 }); */
