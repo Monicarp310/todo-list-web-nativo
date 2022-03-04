@@ -17,12 +17,10 @@ tasks.forEach((task) => {
   let priority = taskToClone.getElementsByClassName("taskPriority");
   priority[0].innerHTML = task.priority;
 
-
-  if (status.value="To do"){
+  if (document.getElementById("taskStatus").value === "Todo") {
     let todoList = document.getElementById("todoTask");
     todoList.appendChild(taskToClone.cloneNode(true));
   }
-
   let doingList = document.getElementById("doingTask");
   doingList.appendChild(taskToClone.cloneNode(true));
 
@@ -32,6 +30,7 @@ tasks.forEach((task) => {
   let deleteTask = document.getElementById("deleteTask");
   deleteTask.appendChild(taskToClone.cloneNode(true));
 });
+
 
 const addTaskButton = document.getElementById("addTask");
 addTaskButton.addEventListener("click", (event) => {

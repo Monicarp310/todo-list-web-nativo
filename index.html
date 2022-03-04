@@ -1,95 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lista de tareas</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="flex-box">
-      <div class="listTask roundBorder">
-        <div id="formTask">
-          <h1>LISTA DE TAREAS</h1>
-          <form onsubmit="addTask(event)" >
-            <input id="nameTaskForm" type="text" name="taskText" autocomplete="off" placeholder="Nombre tarea" class="roundBorder">
-            <br>
-            <input id="descTaskForm" type="text" name="taskText" autocomplete="off" placeholder="Descripción tarea" class="roundBorder">
-            <br>
-            <input id="priorityForm" type="text" name="taskText" autocomplete="off" placeholder="Estado tarea" class="roundBorder">
-            <br>
-            <input id="statusForm" type="text" name="taskText" autocomplete="off" placeholder="Prioridad tarea" class="roundBorder">
-            <br><br>
-            <button id="addTask" class="addTaskButton">+</button>
-        </form>
-        <div id="tasksContainer"></div>
-        </div>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de tareas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="flex-box rounderBorder" id="formTask">
+    <h1>LISTA DE TAREAS</h1>
+    <form>
+      <input id="nameTaskForm" type="text" name="taskText" autocomplete="off" placeholder="Nombre tarea"
+        class="roundBorder">
+      <br>
+      <input id="descTaskForm" type="text" name="descForm" autocomplete="off" placeholder="Descripción tarea"
+        class="roundBorder">
+      <br>
+      <select id="statusForm">
+        <option>Estado</option>
+        <option value="Todo">To do</option>
+        <option value="Doing">Doing</option>
+        <option value="Done">Done</option>
+        <option value="Deleted">Deleted</option>
+      </select>
+      
+      <select id="priorityForm" Prioridad>
+        <option>Prioridad</option>
+        <option value="mayor">1</option>
+        <option value="media">2</option>
+        <option value="menor">3</option>
+      </select>
+      <button id="addTaskForm" class="addTaskForm">+</button>
+    </form>
+    <div id="tasksContainer"></div>
+  </div>
+
+  <div class="flex-container roundBorder">
+    <div class="flex-item">
+      <h2>TO DO</h2>
+      <form>
+        <button id="orderTaskTodo" class="orderTaskButton">Ordenar</button>
+        <button id="deleteTaskTodo" class="deleteTaskButton">Vaciar</button>
+      </form>
+      <div id="todoTask"></div>
     </div>
 
-    <div class="flex-container">
-      <div class="flex-item">
-        <div class="list roundBorder">
-          <h1>TO DO</h1>
-          <form>
-            <!-- <button id="orderTask" class="orderTaskButton">Ordenar</button>
-            <button class="deleteTaskButton">Vaciar</button> -->
-          </form>
-        </div>
-        <div id="todoTask"></div>
-      </div>
-
-      <div class="flex-item" id="Doing">
-        <div class="list roundBorder">
-          <h1>DOING</h1>
-          <form>
-       <!--      <button id="orderTask" class="orderTaskButton">Ordenar</button>
-            <button  class="deleteTaskButton">Vaciar</button> -->
-        </form>
-        
-          </form>
-        </div>
-        <div id="doingTask"></div>
-      </div>
-
-      <div class="flex-item">
-        <div class="list roundBorder">
-          <h1>DONE</h1>
-          <form>
-    <!--         <button id="orderTask" class="orderTaskButton">Ordenar</button>
-            <button class="deleteTaskButton">Vaciar</button> -->
-          </form>
-        </div>
-        <div id="doneTask"></div>
-      </div>
-
-      <div class="flex-item">
-        <div class="list roundBorder">
-          <h1>DELETE</h1>
-          <form>
-        <!--     <button id="orderTask" class="orderTaskButton">Ordenar</button>
-            <button class="deleteTaskButton">Vaciar</button> -->
-          </form>
-        </div>
-  
-      <div id="deleteTask"></div>
+    <div class="flex-item">
+      <h2>DOING</h2>
+      <form>
+        <button id="orderTaskDoing" class="orderTaskButton">Ordenar</button>
+        <button id="deleteTaskDoing" class="deleteTaskButton">Vaciar</button>
+      </form>
+      <div id="doingTask"></div>
     </div>
 
-    <div style="display: none">
-      <div id="TasktoClone">
-        <span class="taskName">Nombre</span>
-        <p class="taskDesc">Descripcion</p>
-        <span class="taskStatus">Estado</span>
-        <span class="taskPriority">Prioridad</span>
-      </div>
+    <div class="flex-item">
+      <h2>DONE</h2>
+      <form>
+        <button id="orderTaskDone" class="orderTaskButton">Ordenar</button>
+        <button id="deleteTaskDone" class="deleteTaskButton">Vaciar</button>
+      </form>
+      <div id="doneTask"></div>
     </div>
 
-    <script src="task.js" type="text/javascript"></script>
-    <script src="script-fer.js" type="text/javascript"></script>
-  </body>
+    <div class="flex-item">
+      <h2>DELETED</h2>
+      <form>
+        <button id="orderTaskDeleted" class="orderTaskButton">Ordenar</button>
+        <button id="deleteTaskDeleted" class="deleteTaskButton">Vaciar</button>
+      </form>
+      <div id="deletedTask"></div>
+    </div>
+  </div>
+
+  <div style="display: none">
+    <div id="TasktoClone">
+      <span class="taskName">Nombre</span>
+      <p class="taskDesc">Descripcion</p>
+      <span class="taskStatus">Estado</span>
+      <span class="taskPriority">Prioridad</span>
+    </div>
+  </div>
+
+  <script src="task.js" type="text/javascript"></script>
+  <script src="script-fer.js" type="text/javascript"></script>
+</body>
+
 </html>
